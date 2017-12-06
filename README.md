@@ -65,28 +65,29 @@ __前提__: Node.js v8+, Yarn v1.0+
 
 ### 合并上游变更
 
-If you were previously in a working state and have just pulled new code from `develop`:
+如果您以前处于工作状态，并且刚刚从`develop`中提取了新的代码：
 
-- If there were package dependency changes, run `yarn` at the root.
-  - This command is very quick if there are no new things to install.
-- Run `yarn compile-libs` to get the latest built versions of the library packages in this repo.
-  - This command is quicker than `yarn verify` since it doesn't build the application packages (`docs-app`, `landing-app`, etc.) or run tests
+- 如果存在程序包依赖性更改，请在根目录下运行`yarn`。
+  - 如果没有新东西要安装，这个命令会非常快完成。
+- 运行`yarn compile-libs`来获取这个仓库中库包的最新版本。
+  - 这个命令比`yarn verify`快，因为它不会构建应用程序包（`docs-app`，`landing-app`等）或运行测试
 
-### Developing libraries
+### 开发库
 
-Each library has its own dev script which you can run to watch changes to that package and run the docs application with webpack-dev-server: `yarn dev:core`, `yarn dev:datetime`, etc.
+每个库都有自己的开发脚本，您可以运行它来监控对该软件包的更改，并使用webpack-dev-server运行文档应用程序：`yarn dev:core`，`yarn dev:datetime`等。
 
-- One exception is `table`&mdash;since it has its own dev application, the `dev:table` script doesn't run the docs site.
+- `table`&mdash;是一个例外，因为它有自己的开发应用程序，`dev:table`脚本，不用运行docs站点。
   - Run the table dev application using `yarn dev` in the packages/table-dev-app folder.
-- You may also choose to watch changes across all packages by running `yarn dev:all` from the root directory.
+  - 使用packages/table-dev-app文件夹中的`yarn dev`运行table开发应用程序。
+- 您也可以选择通过从根目录运行`yarn dev:all`来监视所有软件包的更改。
 
-### Updating dependencies
+### 更新依赖关系
 
-1. Edit the `package.json` where you wish to change dependencies.
-1. Run `yarn` at the root to update lockfiles.
-1. Commit the result.
+1. 编辑你想改变依赖关系的`package.json`。
+1. 在根目录下运行`yarn`来更新锁文件。
+1. 提交结果。
 
-### Updating documentation
+### 更新文档
 
 Much of Blueprint's documentation lives inside source code as JSDoc comments in `.tsx?` files and KSS markup in `.scss` files. This documentation is extracted and converted into static JSON data using [documentalist](https://github.com/palantir/documentalist/).
 
