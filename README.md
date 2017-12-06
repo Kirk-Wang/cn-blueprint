@@ -2,68 +2,68 @@
 
 # [Blueprint](http://blueprintjs.com/) [![CircleCI](https://circleci.com/gh/palantir/blueprint.svg?style=svg&circle-token=4725ab38f16004566d6430180663d7e7f9f5da9d)](https://circleci.com/gh/palantir/blueprint)
 
-Blueprint is a React-based UI toolkit for the web.
+Blueprint是一个针对web的，基于React的UI toolkit。
 
-It is optimized for building complex, data-dense web interfaces for _desktop applications_.
-If you rely heavily on mobile interactions and are looking for a mobile-first UI toolkit, this may not be for you.
+针对_desktop applications_，它为构建复杂的，数据密集的Web界面进行了优化。
+如果您严重依赖移动交互，并且正在寻找一个移动优先的UI工具包，Blueprint可能不适合您。
 
-[**View the full documentation ▸**](http://blueprintjs.com/docs)
+[**查看完整的文档 ▸**](http://blueprintjs.com/docs)
 
-[**Read our FAQ on the wiki ▸**](https://github.com/palantir/blueprint/wiki/Frequently-Asked-Questions)
+[**阅读我们在wiki上的FAQ ▸**](https://github.com/palantir/blueprint/wiki/Frequently-Asked-Questions)
 
-[**Read the introductory blog post ▸**](https://medium.com/@palantir/scaling-product-design-with-blueprint-25492827bb4a)
+[**阅读介绍博客 ▸**](https://medium.com/@palantir/scaling-product-design-with-blueprint-25492827bb4a)
 
-**Support question**? We use the [blueprintjs tag on Stack Overflow ▸](http://stackoverflow.com/questions/tagged/blueprintjs)
+**支持问题**？ 我们使用 [Stack Overflow 上的 blueprintjs 标签 ▸](http://stackoverflow.com/questions/tagged/blueprintjs)
 
-## Packages
+## 包
 
-This repository contains multiple projects in the `packages/` directory that fall into 3 categories:
+这个存储库包含`packages/`目录下的多个项目，分为三类：
 
-### Libraries
+### 库
 
-These are the component libraries we publish to NPM.
+这些是我们发布到NPM的组件库。
 
-- [![npm](https://img.shields.io/npm/v/@blueprintjs/core.svg?label=@blueprintjs/core)](https://www.npmjs.com/package/@blueprintjs/core) &ndash; Core styles & components.
-- [![npm](https://img.shields.io/npm/v/@blueprintjs/datetime.svg?label=@blueprintjs/datetime)](https://www.npmjs.com/package/@blueprintjs/datetime) &ndash; Components for interacting with dates and times.
-- [![npm](https://img.shields.io/npm/v/@blueprintjs/docs.svg?label=@blueprintjs/docs)](https://www.npmjs.com/package/@blueprintjs/docs) &ndash; Documentation theme for [Documentalist](https://github.com/palantir/documentalist) data.
-- [![npm](https://img.shields.io/npm/v/@blueprintjs/table.svg?label=@blueprintjs/table)](https://www.npmjs.com/package/@blueprintjs/table) &ndash; Scalable interactive table component.
+- [![npm](https://img.shields.io/npm/v/@blueprintjs/core.svg?label=@blueprintjs/core)](https://www.npmjs.com/package/@blueprintjs/core) &ndash; 核心样式和组件。
+- [![npm](https://img.shields.io/npm/v/@blueprintjs/datetime.svg?label=@blueprintjs/datetime)](https://www.npmjs.com/package/@blueprintjs/datetime) &ndash; 用于与日期和时间交互的组件。
+- [![npm](https://img.shields.io/npm/v/@blueprintjs/docs.svg?label=@blueprintjs/docs)](https://www.npmjs.com/package/@blueprintjs/docs) &ndash; [Documentalist](https://github.com/palantir/documentalist) 数据的文档主题。
+- [![npm](https://img.shields.io/npm/v/@blueprintjs/table.svg?label=@blueprintjs/table)](https://www.npmjs.com/package/@blueprintjs/table) &ndash; 可扩展交互式表格组件。
 - [![npm](https://img.shields.io/npm/v/@blueprintjs/labs.svg?label=@blueprintjs/labs)](https://www.npmjs.com/package/@blueprintjs/labs) &ndash; Incubator and staging area for new components still under initial development.
 
-### Applications
+### 应用程序
 
-These are hosted on GitHub Pages as static web applications:
+这些在GitHub Pages上作为静态Web应用程序托管：
 
-- `docs-app` &ndash; Documentation site at blueprintjs.com/docs
-- `landing-app` &ndash; Landnig page at blueprintjs.com
+- `docs-app` &ndash; 文档站点在blueprintjs.com/docs
+- `landing-app` &ndash; 在blueprintjs.com的Landnig页面
 
-These are used as development playground environments:
+这些被用作开发playground的环境：
 
-- `table-dev-app` &ndash; demo page that supports manual testing of all table features
+- `table-dev-app` &ndash; 演示页面，支持所有表格功能的手动测试
 
-### Build tooling
+### 构建工具
 
-These private packages define development dependencies and contain build configuration. They adhere to the standard NPM package layout, which allows us to keep clear API boundaries for build configuration and isolate groups of `devDependencies`. In the future, we might publish these packages to allow other Blueprint projects to use this infrastructure outside this monorepo.
+这些私有包定义了开发依赖并包含构建配置。它们遵循标准的NPM包layout，它允许我们为构建配置和隔离`devDependencies`组保持清晰的API边界。未来，我们可能会发布这些软件包，以允许其他Blueprint项目在这个monorepo之外使用这个基础设施。
 
 - `karma-build-scripts`
 - `node-build-scripts`
 - `tslint-config`
 - `webpack-build-scripts`
 
-## Development
+## 开发
 
-[Lerna](https://lernajs.io/) manages inter-package dependencies in this monorepo.
-Builds are orchestrated via `lerna run` and NPM scripts.
+[Lerna](https://lernajs.io/)管理这个monorepo中的包间依赖关系。
+版本是通过`lerna run`和NPM脚本编排的。
 
-__Prerequisites__: Node.js v8+, Yarn v1.0+
+__前提__: Node.js v8+, Yarn v1.0+
 
-### One-time setup
+### 一键安装
 
-After cloning this repo, run:
+克隆这个repo之后，运行：
 
-1. `yarn` to install all dependencies.
-1. `yarn verify` to ensure you have all the build tooling working properly.
+1. `yarn` 安装所有的依赖。
+1. `yarn verify` 确保您的所有构建工具正常工作。
 
-### Incorporating upstream changes
+### 合并上游变更
 
 If you were previously in a working state and have just pulled new code from `develop`:
 
