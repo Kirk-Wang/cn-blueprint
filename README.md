@@ -77,7 +77,6 @@ __前提__: Node.js v8+, Yarn v1.0+
 每个库都有自己的开发脚本，您可以运行它来监控对该软件包的更改，并使用webpack-dev-server运行文档应用程序：`yarn dev:core`，`yarn dev:datetime`等。
 
 - `table`&mdash;是一个例外，因为它有自己的开发应用程序，`dev:table`脚本，不用运行docs站点。
-  - Run the table dev application using `yarn dev` in the packages/table-dev-app folder.
   - 使用packages/table-dev-app文件夹中的`yarn dev`运行table开发应用程序。
 - 您也可以选择通过从根目录运行`yarn dev:all`来监视所有软件包的更改。
 
@@ -89,27 +88,22 @@ __前提__: Node.js v8+, Yarn v1.0+
 
 ### 更新文档
 
-Much of Blueprint's documentation lives inside source code as JSDoc comments in `.tsx?` files and KSS markup in `.scss` files. This documentation is extracted and converted into static JSON data using [documentalist](https://github.com/palantir/documentalist/).
+许多Blueprint的文档都存在于源代码中，因为JSDoc在`.tsx？`文件中注释，在`.scss`文件中有KSS标记。这个文档被[documentalist](https://github.com/palantir/documentalist/)提取和转换为JSON数据来生成的。
 
-If you are updating documentation sources (_not_ the docs UI code which lives in `packages/docs-app`), you'll need to run `yarn generate-docs-data` from the `docs-app` package to see it reflected in the application. Note that `yarn bundle` in this package also runs this script.
+如果您正在更新文档来源（而不是位于`packages/docs-app`中的文档UI代码），则需要从`docs-app`包运行`yarn generate-docs-data`以查看它在应用程序中的反映。请注意，这个包中的`yarn bundle`也运行这个脚本。
 
-### Updating icons
+### 更新图标
 
-The [One-time setup](#one-time-setup) and [Incorporating upstream changes](#incorporating-upstream-changes) steps should produce the generated
-source code in this repo used to build the icons documentation. This is sufficient for most development workflows.
+在这个仓库中，[一键安装](#one-time-setup)和[合并上游变更](#incorporating-upstream-changes)步骤应产生生成的源代码，用于建立图标文档。这对大多数开发工作流程来说已经足够了。
+如果您正在更新图标或添加新图标，则需要在`packages/core`中运行`yarn compile`，以查看运行任何dev脚本之前所反映的更改。
 
-If you are updating icons or adding new ones, you'll need to run `yarn compile` in `packages/core` to see those changes reflected before
-running any of the dev scripts.
+## 贡献
 
-## Contributing
+寻找有助于代码库的地方？看看
+[Status: accepting PRs](https://github.com/palantir/blueprint/labels/Status%3A%20accepting%20PRs)标签。
 
-Looking for places to contribute to the codebase? Check out the
-[Status: accepting PRs](https://github.com/palantir/blueprint/labels/Status%3A%20accepting%20PRs) label.
+阅读我们的[贡献指南](https://github.com/palantir/blueprint/blob/master/CONTRIBUTING.md)和[开发实践](https://github.com/palantir/blueprint/wiki/Development-Practices)，为您的PR提供最好的合并机会。
 
-Read about our [contribution guidelines](https://github.com/palantir/blueprint/blob/master/CONTRIBUTING.md) and
-[development practices](https://github.com/palantir/blueprint/wiki/Development-Practices) to give your PR
-its best chance at getting merged.
+## 许可证
 
-## License
-
-This project is made available under the [Apache-2.0 License](https://github.com/palantir/blueprint/blob/master/LICENSE).
+该项目在[Apache-2.0许可证](https://github.com/palantir/blueprint/blob/master/LICENSE)下提供使用。
