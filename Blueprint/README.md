@@ -3,7 +3,7 @@
 Blueprint是一个针对web的，基于React的UI toolkit。
 * 开发和问题跟踪产生在[github.com/palantir/blueprint](https://github.com/palantir/blueprint)。
 * 发行版被标记并记录[在GitHub上](https://github.com/palantir/blueprint/releases)。
-* 对于支持请求，在Stack Overflow上使用[__blueprintjs__标记]（http://stackoverflow.com/questions/tagged/blueprintjs）。
+* 对于支持请求，在Stack Overflow上使用[__blueprintjs__标记](http://stackoverflow.com/questions/tagged/blueprintjs)。
 
 #### 浏览器支持{#Browser-support}
 
@@ -13,60 +13,54 @@ Blueprint是一个针对web的，基于React的UI toolkit。
 * IE 10及以下版本由于缺乏对CSS Flexbox Layout的支持而不被支持。 
 * 这些浏览器在[2016年1月](https://www.microsoft.com/en-us/WindowsForBusiness/End-of-IE-support)被微软（支持结束）弃用。
 
-@## Usage
+#### 用法
 
-Blueprint is available as a collection of NPM packages under the `@blueprintjs` scope. The full
-package list and their latest versions appear under the _Releases_ dropdown above.
+Blueprint作为NPM包的集合在`@blueprintjs`作用域下。完整的包列表和它们的最新版本出现在上面的_发行版_下拉列表下。
 
-Each package contains a CSS file and a collection of CommonJS modules exposing React components.
-The `main` module exports all symbols from all modules so you don't have to import individual files
-(though you can if you want to). The JavaScript components are stable and their APIs adhere to
-[semantic versioning](http://semver.org/).
+每个包都包含一个CSS文件和一组暴露React组件的CommonJS模块。`main`模块从所有模块中导出所有symbols，所以你不必导入单个文件（尽管你可以如果你想）。JavaScript组件是稳定的，它们的API遵循[semantic versioning](http://semver.org/)。
 
-@### NPM installation
+#### NPM 安装
 
-1. Install the core package with an NPM client like `npm` or `yarn`, pulling in all relevant
-dependencies:
+1. 使用NPM客户端（如`npm`或`yarn`）安装核心软件包，引入所有相关的依赖关系：
 
   ```sh
   npm install --save @blueprintjs/core
   ```
 
-1. If you see `UNMET PEER DEPENDENCY` errors, you should manually install React:
+1. 如果你看到`UNMET PEER DEPENDENCY`错误，你应该手动安装React：
 
   ```sh
   npm install --save react react-dom react-addons-css-transition-group
   ```
 
-1. After installation, you'll be able to import the React components in your application:
+1. 安装之后，您将能够在应用程序中导入React组件：
 
   ```tsx
-  // extract specific components
+  // 提取特定的组件
   import { Intent, Spinner, DatePickerFactory } from "@blueprintjs/core";
-  // or just take everything!
+  // 或者提取一切！
   import * as Blueprint from "@blueprintjs/core";
 
-  // using JSX:
+  // 使用JSX：
   const mySpinner = <Spinner intent={Intent.PRIMARY} />;
 
-  // using the namespace import:
+  // 使用命名空间导入：
   const anotherSpinner = <Blueprint.Spinner intent={Blueprint.Intent.PRIMARY}/>;
 
-  // use factories for React.createElement shorthand if you're not using JSX.
-  // every component provides a corresponding <Name>Factory.
+  // 如果您不使用JSX，请使用React.createElement简写工厂。
+  // 每个组件都提供相应的<Name>Factory.
   const myDatePicker = DatePickerFactory();
   ```
 
-1. Don't forget to include the main CSS file from each Blueprint package! Additionally, the
-`resources/` directory contains supporting media such as fonts and images.
+1. 不要忘记包含来自每个Blueprint包的主要CSS文件！另外，`resources/`目录包含支持的媒体，如字体和图片。
 
   ```html
-  <!-- in plain old reliable HTML -->
+  <!-- 在普通的旧的可靠的HTML -->
   <!DOCTYPE HTML>
   <html>
     <head>
       ...
-      <!-- include dependencies manually -->
+      <!-- 手动包含依赖项 -->
       <link href="path/to/node_modules/normalize.css/normalize.css" rel="stylesheet" />
       <link href="path/to/node_modules/@blueprintjs/core/dist/blueprint.css" rel="stylesheet" />
       ...
@@ -76,19 +70,16 @@ dependencies:
   ```
 
   ```css.scss
-  // or, using node-style package resolution in a CSS file:
-  // (dependencies' stylesheets should be resolved automatically)
+  // 或者在CSS文件中使用 node-style 的包解析：
+  //（依赖关系的样式表应该会被自动解析）
   @import "~@blueprintjs/core";
   ```
 
-@### CDN consumption
+#### CDN 消费
 
-Blueprint supports the venerable [unpkg CDN](https://unpkg.com). Each package provides a UMD
-`dist/[name].bundle.js` file containing the bundled source code. The UMD wrapper exposes each
-library on the `Blueprint` global variable: `Blueprint.Core`, `Blueprint.Datetime`, etc.
+Blueprint支持过去的[unpkg CDN](https://unpkg.com)。每个软件包提供一个UMD`dist/[name].bundle.js`文件，其中包含捆绑的源代码。UMD包装器在`Blueprint`全局变量上暴露了每个库：`Blueprint.Core`，`Blueprint.Datetime`等
 
-These bundles _do not include_ external dependencies; your application will need to ensure that
-`normalize.css`, `React`, `classnames`, and `Tether` are available at runtime.
+这些包_不包括_外部依赖; 你的应用程序将需要确保`normalize.css`，`React`，`classnames`和`Tether`在运行时可用。
 
 ```html
 <!DOCTYPE html>
