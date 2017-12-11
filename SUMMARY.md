@@ -15,3 +15,5 @@
         * [焦点管理](Core/Accessibility/README.md#Focus-management)
             * [JavaScript API](Core/Accessibility/README.md#JavaScript-API)
         * [色彩对比](Core/Accessibility/README.md#Color-contrast)
+    * [颜色](Core/Color/README.md#Colors)
+        * [灰度](Core/Color/README.md#Gray-scale)
