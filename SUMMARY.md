@@ -10,3 +10,4 @@
         * [Vanilla JS APIs](Blueprint/README.md#Vanilla-JS-APIs)
     * [理解 TypeScript](Blueprint/README.md#Understanding-TypeScript)
     * [开发 & 贡献](Blueprint/README.md#Development-contributions)
+* [Core](Core/README.md#Core)
