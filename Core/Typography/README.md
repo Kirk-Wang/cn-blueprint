@@ -48,7 +48,7 @@ Longform text（如渲染的Markdown文档）受益于额外的间距和稍大�
 
 @css preformatted
 
-### 块级引用{#Block quotes}
+### 块级引用{#Block-quotes}
 
 块级引用被视为正在运行的文本。
 
