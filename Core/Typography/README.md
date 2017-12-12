@@ -38,72 +38,59 @@ Longform text（如渲染的Markdown文档）受益于额外的间距和稍大�
 
 ### 链接{#Links}
 
-Simply use an `<a href="">` tag as you normally would. No class is necessary for Blueprint styles.
-Links are underlined only when hovered.
+通常只需使用一个`<a href="">`标签。 Blueprint样式不需要任何类。只有在悬停时链接才加下划线。
 
-Putting an icon inside a link will cause it to inherit the link's text color.
+在链接中放置一个图标将导致它继承链接的文本颜色。
 
-@## Preformatted text
+### 预先格式化的文本{#Preformatted-text}
 
-Use `<pre>` for code blocks, and `<code>` for inline code. Note that `<pre>` blocks will
-retain _all_ whitespace so you'll have to format the content accordingly.
+对于代码块使用`<pre>`，对于内联代码使用`<code>`。请注意`<pre>`块会保留_所有_空格，所以你必须相应地格式化内容。
 
 @css preformatted
 
-@## Block quotes
+### 块级引用{#Block quotes}
 
-Block quotes are treated as running text.
+块级引用被视为正在运行的文本。
 
 @css blockquote
 
-@## Lists
+### 列表{#Lists}
 
-Blueprint provides a small amount of global styling and a few modifier classes for list elements.
+Blueprint为列表元素提供了少量的全局样式和一些修饰符类。
 
-`<ul>` and `<ol>` elements in blocks with the `.pt-running-text` modifier class will
-automatically assume the `.pt-list` styles to promote readability.
+`.pt-running-text`修饰符类中的`<ul>`和`<ol>`元素将自动采用`.pt-list`样式来提高可性。
 
 @css lists
 
-@## Text utilities
+### 文本工具{#Text-utilities}
 
-Blueprint provides a small handful of class-based text utilities which can applied to any element
-that contains text.
+Blueprint提供了一小部分基于类的文本工具，可以应用于任何包含文本的元素。
 
 @css utilities
 
-@## Internationalization
+### 国际化{#Internationalization}
 
-I18n in Blueprint is straightforward. React components expose props for customizing any strings;
-use the library of your choice for managing internationalized strings.
+在Blueprint中的I18n很简单。React组件公开用于定制任何字符串的属性;使用您选择的库来管理国际化的字符串。
 
-@### Right-to-left text
+#### 从右到左的文本{#Right-to-left-text}
 
-Use the utility class `.pt-rtl`.
+使用实用程序类`.pt-rtl`。
 
 @css pt-rtl
 
-@## Dark theme
+### 暗色主题{#Dark-theme}
 
-Blueprint provides two UI color themes: light and dark. The light theme is active by default. The
-dark theme can be applied by adding the class `pt-dark` to a container element to theme all nested
-elements.
+Blueprint提供了两个UI颜色主题：明暗。亮色主题是默认激活的。暗色主题可以通过将类`pt-dark`添加到容器元素来应用所有嵌套元素。
 
-Once applied, the dark theme will cascade to nested `.pt-*` elements inside a `.pt-dark` container.
-There is no way to nest light-themed elements inside a dark container.
+一旦应用，暗色主题将层叠到`.pt-dark`容器内嵌套的`.pt-*`元素。没有办法在暗色容器中嵌套以亮色为主题的元素。
 
-Most elements only support the dark theme when nested inside a `.pt-dark` container because it does
-not make sense to mark individual elements as dark. The dark container is therefore responsible for
-setting a dark background color.
+大多数元素只有在嵌入`.pt-dark`容器时才支持暗色主题，因为将单个元素标记为暗色是没有意义的。暗色容器因此负责设置暗的背景颜色。
 
-The following elements and components support the `.pt-dark` class directly (i.e, `.pt-app.pt-dark`)
-and can be used as a container for nested dark children:
+以下元素和组件直接支持`.pt-dark`类（即`.pt-app.pt-dark`），并且可以用作嵌套的暗色子容器：
 
 - `.pt-app`
 - `.pt-card`
 - Overlays: `Dialog`, `Popover`, `Tooltip`, `Toast`
-- `Popover` and `Tooltip` will automatically detect when their trigger is inside a `.pt-dark`
-container and add the same class to themselves.
+- 当他们的触发在`.pt-dark`容器内时`Popover`和`Tooltip`会自动检测并为自己添加相同的类。
 
-Rather than illustrating dark components inline, this documentation site provides a site-wide switch
-in the top right corner of the page to enable the dark theme. Try it out as you read the docs.
+本文档站点不是直接显示深色组件，而是在页面右上角提供site-wide切换，以启用黑暗的主题。 在阅读文档时尝试一下。
