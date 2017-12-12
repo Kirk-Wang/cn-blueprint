@@ -24,3 +24,5 @@
             * [发散的配色方案](Core/Color/README.md#Diverging-color-schemes)
             * [定性配色方案](Core/Color/README.md#Qualitative-color-schemes)
         * [颜色别名](Core/Color/README.md#Color-aliases)
+    * [排版](Core/Typography/README.md#Colors)
+        * [用法](Core/Typography/README.md#Usage)
